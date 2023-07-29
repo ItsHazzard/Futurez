@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FuturezNow</title>
+  <link rel="icon" href="https://iili.io/HZIXGyl.png" type="image/png">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0%;
+    }
+
+    body {
+      /* Replace these colors with the ones you want for your gradient */
+      background: linear-gradient(to bottom, #003366, #000);
+      /* For older browsers that don't support gradients, fallback color */
+      background: -webkit-linear-gradient(top, #003366, #000);
+      background: -moz-linear-gradient(top, #003366, #000);
+      background: -o-linear-gradient(top, #003366, #000);
+      
+      /* Prevent the background from repeating */
+      background-repeat: no-repeat;
+    }
+  </style>
+  <!-- Add the link to Google Fonts for Handjet -->
+  <link href="https://fonts.googleapis.com/css2?family=Handjet&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 5%; /* Move the container down w/ higher number */
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Handjet', cursive; /* Use the Handjet font */
+    }
+
+    /* Optional styles for the text */
+    .text {
+      font-size: 60px; /* Increase font size for emphasis */
+      font-weight: bold;
+      margin-bottom: 10px; /* Adjust spacing between the two lines of text */
+    }
+     
+    /* Styles for the second line of text */
+    .sub-text {
+      font-size: 24px;
+      color: black;
+      font-weight: bold;
+    }
+    
+    /* Styles for the buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      margin: 45px;
+      transition: all 0.3s ease;
+    }
+       
+    .btn:hover {
+      background-color: cyan;
+      color: #003366;
+    }
+    
+    /* Styles for the popup */
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Dark grey with transparency */
+      backdrop-filter: blur(5px); /* Blurs the background */
+      z-index: 9999;
+    }
+
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: black;
+      color: white;
+      border-radius: 10px;
+      width: 60%; /* Make the popup 2x bigger */
+      height: 60%; /* Make the popup 2x bigger */
+      overflow: auto; /* Add scrollbar when content overflows */
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    /* Styles for the staff list */
+    .staff-list {
+      display: flex;
+      flex-wrap: wrap; /* Allow items to wrap to next line */
+      justify-content: space-between; /* Distribute items horizontally */
+      height: 100%; /* Ensure list takes up full height */
+    }
+
+    .staff-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      width: 48%; /* Spread out items, change this as needed */
+    }
+
+    .staff-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 10px;
+      overflow: hidden;
+    }
+
+    .staff-image img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .staff-name {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <p class="text">FuturezNow</p>
+    <p class="sub-text">Where The Futurez Possible</p> <!-- Second line of text -->    
+  </div>
+  <div>
+    <button class="btn" onclick="openStaffPopup()">Staff</button>
+    <button class="btn" onclick="openInvestPopup()">Invest</button> 
+  </div>
+
+  <!-- Popup for Staff -->
+  <div class="popup-container" id="staffPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&#10006;</span>
+      <div class="staff-list">
+        <!-- Add staff images and names here -->
+        <div class="staff-item">
+          <div class="staff-image">
+            <!-- Add the image source here -->
+            <img src="https://iili.io/HZITX9f.png" alt="Harry">
+          </div>
+          <div class="staff-name">Co-OWNER | Harry | 40%</div>
+        </div>
+        <div class="staff-item">
+          <div class="staff-image">
+            <!-- Add the images source here -->
+            <img src="https://iili.io/HZITqTQ.png" alt="Cooper">
+          </div>
+          <div class="staff-name">Co-OWNER | Cooper | 40%</div>
+        </div>
+        <div class="staff-item">
+          <div class="staff-image">
+            <!-- Add the image source here -->
+            <img src="https://iili.io/HZIcHdP.png" alt="Sierra">
+          </div>
+          <div class="staff-name">Head Deisgner | Sierra | 5%</div>
+        </div>
+        <div class="staff-item">
+          <div class="staff-image">
+            <!-- Add the image source here -->
+            <img src="https://iili.io/HZIcUTg.png" alt="William">
+          </div>
+          <div class="staff-name">Manager | William | 2.5%</div>
+        </div>
+        <div class="staff-item">
+          <div class="staff-image">
+            <!-- Add the image source here -->
+            <img src="https://iili.io/HZIcGpe.png" alt="Andrei">
+          </div>
+          <div class="staff-name">Marketing | Andrei | 2.5%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup for Invest -->
+  <div class="popup-container" id="investPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&#10006;</span>
+      <div class="invest-content">
+        <!-- Add your custom content for the Invest popup here -->
+        <h1>Invest in FuturezNow</h1>
+        <p>STOCK PRICES:</p>
+        <p>100% | 100M | $2.5B </p>
+        <p>10% | 10M | $250M</p>
+        <p>1% | 1M | $25M</p>
+        <p>0.1% | 100k | $2.5M</p>
+        <p>0.01% | 10K | $250K</p>
+        <p>0.001% | 1K | $25K</p>
+        <p>0.0001% | 100 | $2.5K</p>
+        <p>0.00001% | 10 | $250</p>
+        <p>0.000001% | 1 | $25</p>
+        <p>To invest please contact Ph: 0468614555 or eMail: Nova@galaxy-mc.net</p>
+        <p>NOTE: PRICES WILL RISE! CURRENT: $25 PROTOTYPE: $35 PARTNER: $50</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openStaffPopup() {
+      document.getElementById('staffPopup').style.display = 'block';
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    function openInvestPopup() {
+      document.getElementById('investPopup').style.display = 'block';
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    function closePopup() {
+      document.getElementById('staffPopup').style.display = 'none';
+      document.getElementById('investPopup').style.display = 'none';
+      document.removeEventListener('keydown', handleEscapeKey);
+    }
+
+    function handleEscapeKey(event) {
+      if (event.keyCode === 27) { // Check if the ESC key is pressed (keyCode 27)
+        closePopup();
+      }
+    }
+  </script>
+</body>
+</html>
