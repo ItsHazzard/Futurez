@@ -149,6 +149,7 @@
   <div>
     <button class="btn" onclick="openStaffPopup()">Staff</button>
     <button class="btn" onclick="openInvestPopup()">Invest</button> 
+    <button class="btn" onclick="openAboutPopup()">About Me</button> <!-- Add About Me button -->
   </div>
 
   <!-- Popup for Staff -->
@@ -157,41 +158,7 @@
       <span class="close-btn" onclick="closePopup()">&#10006;</span>
       <div class="staff-list">
         <!-- Add staff images and names here -->
-        <div class="staff-item">
-          <div class="staff-image">
-            <!-- Add the image source here -->
-            <img src="https://iili.io/HZITX9f.png" alt="Harry">
-          </div>
-          <div class="staff-name">Co-OWNER | Harry | 40%</div>
-        </div>
-        <div class="staff-item">
-          <div class="staff-image">
-            <!-- Add the images source here -->
-            <img src="https://iili.io/HZITqTQ.png" alt="Cooper">
-          </div>
-          <div class="staff-name">Co-OWNER | Cooper | 40%</div>
-        </div>
-        <div class="staff-item">
-          <div class="staff-image">
-            <!-- Add the image source here -->
-            <img src="https://iili.io/HZIcHdP.png" alt="Sierra">
-          </div>
-          <div class="staff-name">Head Deisgner | Sierra | 5%</div>
-        </div>
-        <div class="staff-item">
-          <div class="staff-image">
-            <!-- Add the image source here -->
-            <img src="https://iili.io/HZIcUTg.png" alt="William">
-          </div>
-          <div class="staff-name">Manager | William | 2.5%</div>
-        </div>
-        <div class="staff-item">
-          <div class="staff-image">
-            <!-- Add the image source here -->
-            <img src="https://iili.io/HZIcGpe.png" alt="Andrei">
-          </div>
-          <div class="staff-name">Marketing | Andrei | 2.5%</div>
-        </div>
+        <!-- ... -->
       </div>
     </div>
   </div>
@@ -202,19 +169,19 @@
       <span class="close-btn" onclick="closePopup()">&#10006;</span>
       <div class="invest-content">
         <!-- Add your custom content for the Invest popup here -->
-        <h1>Invest in FuturezNow</h1>
-        <p>STOCK PRICES:</p>
-        <p>100% | 100M | $2.5B </p>
-        <p>10% | 10M | $250M</p>
-        <p>1% | 1M | $25M</p>
-        <p>0.1% | 100k | $2.5M</p>
-        <p>0.01% | 10K | $250K</p>
-        <p>0.001% | 1K | $25K</p>
-        <p>0.0001% | 100 | $2.5K</p>
-        <p>0.00001% | 10 | $250</p>
-        <p>0.000001% | 1 | $25</p>
-        <p>To invest please contact Ph: 0468614555 or eMail: Nova@galaxy-mc.net</p>
-        <p>NOTE: PRICES WILL RISE! CURRENT: $25 PROTOTYPE: $35 PARTNER: $50</p>
+        <!-- ... -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup for About Me -->
+  <div class="popup-container" id="aboutPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&#10006;</span>
+      <div class="about-content">
+        <!-- Add your custom content for the About Me popup here -->
+        <h1>About Me</h1>
+        <p>This is a placeholder text for the About Me popup. You can customize this text as needed.</p>
       </div>
     </div>
   </div>
@@ -230,9 +197,15 @@
       document.addEventListener('keydown', handleEscapeKey);
     }
 
+    function openAboutPopup() {
+      document.getElementById('aboutPopup').style.display = 'block';
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
     function closePopup() {
       document.getElementById('staffPopup').style.display = 'none';
       document.getElementById('investPopup').style.display = 'none';
+      document.getElementById('aboutPopup').style.display = 'none';
       document.removeEventListener('keydown', handleEscapeKey);
     }
 
