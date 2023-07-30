@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Chat</title>
+  <link rel="icon" href="https://iili.io/HZaI7pt.png" type="image/png">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #chat-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: #f0f0f0;
+        }
+
+        #message-box {
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #message-input {
+            flex: 1;
+            padding: 5px;
+        }
+
+        #send-button {
+            padding: 5px 10px;
+        }
+
+        #messages {
+            overflow-y: auto;
+            padding: 10px;
+            flex: 1;
+        }
+
+        .message {
+            background-color: #e1f5fe;
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <div id="message-box">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to add a new message to the chat
+        function addMessage(sender, message) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.textContent = `${sender}: ${message}`;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Function to handle the "Send" button click event
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            if (message !== '') {
+                addMessage('You', message);
+                input.value = '';
+            }
+        }
+
+        // Event listener for the "Send" button click
+        document.getElementById('send-button').addEventListener('click', sendMessage);
+
+        // Event listener for the Enter key press in the message input
+        document.getElementById('message-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
