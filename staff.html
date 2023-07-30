@@ -68,7 +68,7 @@
             padding: 5px;
             margin: 4px;
             border: none;
-            border-radius: 15px;
+            border-radius: 10px;
             background-color: #333;
             color: #fff;
             width: 150px;
@@ -95,7 +95,12 @@
         </div>
     </div>
 
+    <!-- Add the socket.io library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+
     <script>
+        const socket = io('your_websocket_server_url'); // Replace 'your_websocket_server_url' with your actual server URL
+
         // Function to add a new message to the chat
         function addMessage(sender, message) {
             const messagesDiv = document.getElementById('messages');
@@ -115,7 +120,8 @@
             const message = messageInput.value.trim();
 
             if (sender !== '' && message !== '') {
-                addMessage(sender, message);
+                // Send the message to the server
+                socket.emit('chatMessage', { sender, message });
                 messageInput.value = '';
             }
         }
@@ -128,6 +134,12 @@
             if (event.key === 'Enter') {
                 sendMessage();
             }
+        });
+
+        // Listen for incoming messages from the server
+        socket.on('chatMessage', (data) => {
+            const { sender, message } = data;
+            addMessage(sender, message);
         });
     </script>
 </body>
