@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>FuturezNow</title>
-  <link rel="icon" href="Nova/Favicon HoverBike.png" type="image/png">
+  <link rel="icon" href="https://nova.galaxy-mc.net/Nova/Favicon%20HoverBike.png" type="image/png">
   <style>
     html, body {
       height: 100%;
@@ -56,24 +56,31 @@
       font-weight: bold;
     }
     
-    /* Styles for the buttons */
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: 2px solid white;
-      background-color: transparent;
-      color: white;
-      cursor: pointer;
-      margin: 45px;
-      transition: all 0.3s ease;
-    }
-       
-    .btn:hover {
-      background-color: cyan;
-      color: #003366;
-    }
-    
+  /* Styles for the buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: transparent; /* Set background to transparent */
+    color: rgb(255, 255, 255); /* Set text color to black */
+    cursor: pointer;
+    margin: 45px;
+    transition: all 0.3s ease;
+    /* Set a gradient border */
+    border: 2px solid;
+    border-image: linear-gradient(to bottom, darkblue, purple) 1;
+    /* Set the border-image-slice property to control the width of the border */
+    border-image-slice: 1;
+  }
+
+  .btn:hover {
+    color: black; /* Set text color to black on hover */
+    /* Change the gradient border on hover */
+    border-image: linear-gradient(to bottom, purple, darkblue) 1;
+    /* Make the button bigger on hover */
+    transform: scale(1.1); /* Adjust the scale factor as needed */
+  }
+
     /* Styles for the popup */
     .popup-container {
       display: none;
@@ -108,37 +115,44 @@
       cursor: pointer;
     }
 
-    /* Styles for the staff list */
-    .staff-list {
-      display: flex;
-      flex-wrap: wrap; /* Allow items to wrap to next line */
-      justify-content: space-between; /* Distribute items horizontally */
-      height: 100%; /* Ensure list takes up full height */
-    }
+  /* Styles for the staff list */
+  .staff-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Distribute items horizontally */
+    height: 100%; /* Ensure list takes up full height */
+  }
 
-    .staff-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      width: 48%; /* Spread out items, change this as needed */
-    }
+  .staff-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 33%; /* Spread out items, change this as needed */
+    transition: all 0.3s ease; /* Add a transition for smooth scaling */
+  }
 
-    .staff-image {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-right: 10px;
-      overflow: hidden;
-    }
+  .staff-item:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+  }
 
-    .staff-image img {
-      width: 100%;
-      height: 100%;
-    }
+  .staff-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 40%;
+    margin-right: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease; /* Add a transition for smooth scaling */
+  }
 
-    .staff-name {
-      font-weight: bold;
-    }
+  .staff-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .staff-name {
+    font-weight: bold;
+  }
+
   </style>
 </head>
 <body>
@@ -146,13 +160,13 @@
     <p class="text">FuturezNow</p>
     <p class="sub-text">Where The Futurez Possible</p> <!-- Second line of text -->    
   </div>
+
   <div>
     <button class="btn" onclick="openStaffPopup()">Staff</button>
     <button class="btn" onclick="openInvestPopup()">Invest</button> 
     <button class="btn" onclick="openAboutPopup()">About Us</button> <!-- Add About Me button -->
   </div>
 
-  <!-- Popup for Staff -->
   <div class="popup-container" id="staffPopup">
     <div class="popup-content">
       <span class="close-btn" onclick="closePopup()">&#10006;</span>
@@ -161,56 +175,56 @@
         <div class="staff-item">
           <div class="staff-image">
             <!-- Add the image source here -->
-            <img src="Nova/Harry Hazzard.png" alt="Harry">
+            <img src="https://nova.galaxy-mc.net/Nova/Harry%20Hazzard.png" alt="Harry">
           </div>
           <div class="staff-name">Co-OWNER | Harry | 40%</div>
         </div>
         <div class="staff-item">
           <div class="staff-image">
             <!-- Add the images source here -->
-            <img src="Nova/Cooper Frog.png" alt="Cooper">
+            <img src="https://nova.galaxy-mc.net/Nova/Cooper%20Frog.png" alt="Cooper">
           </div>
           <div class="staff-name">Co-OWNER | Cooper | 40%</div>
         </div>
          <div class="staff-item">
           <div class="staff-image">
             <!-- Add the image source here -->
-            <img src="Nova/William Stan(SP).png" alt="William">
+            <img src="https://nova.galaxy-mc.net/Nova/William%20Stan(SP).png" alt="William">
           </div>
           <div class="staff-name">Manager | William | 2.5%</div>
         </div>
         <div class="staff-item">
           <div class="staff-image">
             <!-- Add the image source here -->
-            <img src="Nova/Sierra Horse.png" alt="Sierra">
+            <img src="https://nova.galaxy-mc.net/Nova/Sierra%20Horse.png" alt="Sierra">
           </div>
           <div class="staff-name">Head Deisgner | Sierra | 5%</div>
         </div>
         <div class="staff-item">
           <div class="staff-image">
             <!-- Add the image source here -->
-            <img src="Nova/Andrei Eric(SP).png" alt="Andrei">
+            <img src="https://nova.galaxy-mc.net/Nova/Andrei%20Eric(SP).png" alt="Andrei">
           </div>
           <div class="staff-name">Marketing | Andrei | 2.5%</div>
           </div>
         <div class="staff-item">
           <div class="staff-image">
             <!-- Add the image source here -->
-            <img src="Nova/Lainey BUFF Giraff.png" alt="Lainey">
+            <img src="https://nova.galaxy-mc.net/Nova/Lainey%20BUFF%20Giraff.png" alt="Lainey">
           </div>
           <div class="staff-name">Jr Designer | Lainey | 0%</div>
         </div>
         <div class="staff-item">
           <div class="staff-image">
             <!-- Add the image source here -->
-            <img src="Nova/Zac BUFF Kangeroo.png" alt="Zac">
+            <img src="https://nova.galaxy-mc.net/Nova/Zac%20BUFF%20Kangeroo.png" alt="Zac">
           </div>
           <div class="staff-name">Marketing | Zac | 0%</div>
         </div>
       </div>
     </div>
   </div>
-
+  
   <!-- Popup for Invest -->
   <div class="popup-container" id="investPopup">
     <div class="popup-content">
