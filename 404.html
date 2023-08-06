@@ -35,7 +35,31 @@
         .apply-button {
             margin-top: 20px;
         }
-        
+
+        /* Styles for the buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: transparent; /* Set background to transparent */
+            color: rgb(255, 255, 255); /* Set text color to white */
+            cursor: pointer;
+            margin: 45px;
+            transition: all 0.3s ease;
+            /* Set a gradient border */
+            border: 2px solid;
+            border-image: linear-gradient(to bottom, darkblue, purple) 1;
+            /* Set the border-image-slice property to control the width of the border */
+            border-image-slice: 1;
+        }
+
+        .btn:hover {
+            color: black; /* Set text color to black on hover */
+            /* Change the gradient border on hover */
+            border-image: linear-gradient(to bottom, purple, darkblue) 1;
+            /* Make the button bigger on hover */
+            transform: scale(1.1); /* Adjust the scale factor as needed */
+        }
     </style>
 </head>
 <body>
@@ -44,11 +68,12 @@
     </div>
     <div class="content">
         <h1>404 - Page Not Found</h1>
-        <p>This is Harry, Harry is our Sr Developer and his only job is to keep the site running.</p>
-        <p>Apply for his job here:</p>
+        <h3>This is Harry, Harry is our Sr Developer and his only job is to keep the site running.</h3>
+        <h3>Apply for his job here:</h3>
         <a class="apply-button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-            <button>Apply</button>
+            <button class="btn">Apply</button>
         </a>
     </div>
 </body>
 </html>
+
